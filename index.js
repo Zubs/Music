@@ -3,7 +3,6 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const dbURI = require('./config/db.js');
-const userRoutes = require('./routes/users.js');
 const { createError } = require('http');
 const routes = require('./routes/web.js');
 
@@ -33,7 +32,7 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/', userRoutes);
+app.use('/', routes);
 
 app.use((req, res, next) => {
   next(createError(404));

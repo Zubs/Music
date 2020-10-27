@@ -1,3 +1,3 @@
-const dbURI = 'mongodb+srv://young:ethene20@cluster0.hgbre.mongodb.net/xmusic?retryWrites=true&w=majority';
+const { DB_URL } = require('./index');
 
-module.exports = dbURI;
+module.exports = DB_URL;

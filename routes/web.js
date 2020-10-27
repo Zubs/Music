@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const { index, about, contact } = require('../controllers/PagesController');
-const { register, logout, login } = require('../controllers/UserController');
+const { register, login } = require('../controllers/UserController');
 const { songs, showSong, download } = require('../controllers/SongsController');
 
 router.get('/', index);
@@ -14,8 +14,6 @@ router.get('/contact', contact);
 router.get('/login', login);
 
 router.get('/register', register);
-
-router.get('/logout', logout);
 
 router.get('/songs', songs);
 
