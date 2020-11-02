@@ -10,7 +10,6 @@ const routes = require('./routes/web.js');
 const app = express();
 
 // Link to mongoDB atlas
-// const dbURI = dbURI;
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
@@ -27,11 +26,12 @@ app.set('view engine', 'ejs');
 // Set Up static files
 app.use(express.static('public'));
 
-// Using morgan to log instead
+// Using morgan to log
 app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/', userRoutes);
 app.use('/', routes);
 
 app.use((req, res, next) => {

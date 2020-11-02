@@ -1,0 +1,5 @@
+1. Make about page
+2. Make the single-song page
+3. Make user dashboard
+4. Make all songs page
+5. 
