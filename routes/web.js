@@ -7,12 +7,13 @@ const {
   contact,
   saveContact,
 } = require('../controllers/PagesController');
+const { showLogin, showRegister } = require('../controllers/UserController');
 const {
-  logout,
-  showLogin,
-  showRegister,
-} = require('../controllers/UserController');
-const { songs, showSong, download } = require('../controllers/SongsController');
+  songs,
+  showSong,
+  download,
+  uploadSong,
+} = require('../controllers/SongsController');
 const { artist } = require('../controllers/ArtistController');
 
 router.get('/', index);
@@ -26,6 +27,10 @@ router.post('/contact', saveContact);
 router.get('/login', showLogin);
 
 router.get('/register', showRegister);
+
+// songs
+
+router.post('/songs', uploadSong);
 
 router.get('/songs', songs);
 
